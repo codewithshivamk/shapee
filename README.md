@@ -40,7 +40,7 @@ We have a lot planned but as early adopters, you have a chance to shape the plac
 (Our vision is to provide access to the world’s work opportunities, learn, and collaborate in one place.)
 
 
-<h3 align="left">If you want to find out more about how it works, check out this link:</h3>
+<h3 align="left">If you want to find out more about how it works, check out this link👇:</h3>
 <p align="left">
 https://www.joinfeiner.com/
 </p>
