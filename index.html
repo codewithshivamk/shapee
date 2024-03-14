@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>NODE</title> 
+    <link rel="icon" type="image/x-icon" href="Group 90 (2).png">
+</head>
+<body>
+
+    <style>
+
+.glass {
+    max-width: 700px;
+  margin: 40px auto;
+}
+.glass-1 {
+    height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.glass h1 {
+font-size: 1.5rem;
+text-align: center;
+}
+.glass h2 {
+font-size: 1rem;
+margin-top: 20px;
+}
+.input {
+    position: sticky;
+  top: -2px;
+width: 100%;
+height: 70px;
+overflow: hidden;
+margin-top: 40px;
+align-items: center;
+}
+.input input {
+background-color: #f3f3f3;
+width: 100%;
+height: 70px;
+border: none;
+padding-left: 30px;
+padding-top: 0;
+outline: none;
+font-size: 18px;
+border-radius: 6px;
+}
+.glass p {
+font-size: 16px;
+margin-top: 30px;
+}
+
+
+
+
+
+
+    </style>
+
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <a href="index.html"><img src="Images\Group 88.png" alt=""></a> 
+            </div>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="index.html">
+                    <i class=" uil-search"></i>
+                    <span class="link-name">Home</span>
+                </a></li>
+               <!---<li><a href="feed.html">
+                    <i class=" uil-compass"></i>
+                    <span class="link-name">Discover</span>
+                </a></li>--> 
+                <li><a href="about.html" target="_blank">
+                    <i class=" uil-copy-alt"></i>
+                    <span class="link-name">About Node</span>
+                </a></li>
+                <li><a href="https://discord.gg/RMbjzrSUej" target="_blank">
+                    <i class=" uil-favorite"></i>
+                    <span class="link-name">Join Community</span>
+                </a></li>
+                <li><a href="https://discord.gg/RMbjzrSUej" target="_blank">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Chat with founder</span>
+                </a></li>
+
+            </ul>
+            
+            <ul class="logout-mode">
+
+                <li><a href="#">
+                    <span style="font-weight: 400;" class="link-name"></span>
+                </a></li>
+
+                <li><a href="" target="_blank">
+                    <span style="font-weight: 400;" class="link-name"></span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                    <span style="font-weight: 400;" class="link-name"></span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class=""></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+
+                <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi0RCj8aLdKFX-cvYkW6kDveuaUlMnpes&libraries=places&callback=initMap">
+</script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div style=" border: 1.6px solid #efefef; " class="search-input">
+        <a href="" target="_blank" hidden></a>
+        <input style="font-size: 14px;" type="text" placeholder="\Prompt suggestions">
+        <div class="autocom-box">
+        </div>
+        <div class="icon"><i class="fas fa-search"></i></div>
+      </div>
+    </div>
+
+
+           
+
+ 
+              
+
+                
+
+                <div class="glass"> 
+                    <h1>Where knowledge begins</h1> 
+                    <div class="input"  class="search-input"  > 
+                        <input type="text" id="userBox" onkeydown="if(event.keyCode == 13){ talk()}" placeholder="Type... your Question"> 
+                        <div class="autocom-box">
+                        </div>
+                    </div> <p id="chatLog">-Trending-<br><mark style="border-bottom: 1px solid #d1d1d1; background-color: #ffffff;">What is Machine Learning, and How Does It Relate to AI?</mark><br><mark  style="border-bottom: 1px solid #d1d1d1; background-color: #ffffff;">What are the differences between Java and JavaScript?</mark><br><mark  style="border-bottom: 1px solid #d1d1d1; background-color: #ffffff;">History of JavaScript</mark></p>
+                   </div>
+
+
+                 
+                      
+                    
+                    
+                
+
+
+            </div>
+
+           
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        function talk(){
+var know = {
+/*q1*/"Functions" : "Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it. "+ '<a style="text-decoration: none;" href="answer.html"><br><br>Type (Learn in depth about js functions)</a>',
+/*q2*/"How are you" : "Good :)",
+/*q3*/"Your favourite Cricket Team" : "My favorite cricket team is Mumbai Indians",
+/*q4*/"ok" : "Thank You So Much <br> laskdjflsdjfljlsldfj",
+/*q5*/"How to remove a specific item from an array JavaScript?" : ["You can remove an item from an array in Javascript using the splice() method.<br>",
+"splice() takes two parameters, the starting index and number of items to be removed <br>",
+"from the array.<br>",
+""+ '<a><mark>var arr = ["apple", "orange", "banana"]; <br>arr.splice(1,1);</mark></a>',
+]
+};
+var user = document.getElementById('userBox').value;
+document.getElementById('chatLog').innerHTML = user + "<br>";
+if (user in know) {
+document.getElementById('chatLog').innerHTML = know[user] + "<br>";
+}else{
+document.getElementById('chatLog').innerHTML = "Sorry,I didn't understand send your question here <br> go to top search right prompt";
+}
+}
+    </script>
+
+
+
+    <script>
+        let suggestions = [
+    // ABC Normal Letters
+    "Channel",
+    "Google",
+    "Google Fonts",
+    "Google Plus",
+    "Google Drive",
+    "Github",
+    "CSS HTML JS",
+    "TEnLOcRAFT",
+    "CodePen Website",
+    "YouTube",
+    "YouTuber",
+    "YouTube Channel",
+    "Blogger",
+    "Bollywood",
+    "Vlogger",
+    "Vechiles",
+    "Facebook",
+    "Freelancer",
+    "Facebook Page",
+    "Israel Hyom?",
+    "YNet",
+    "MineCraft",
+    "Fortnite",
+    "GTA",
+    "GTA 2",
+    "GTA 3",
+    "GTA 4",
+    "GTA V",
+    "GTA 6",
+    "Search Bar With AutoComplete || Eitan &mdash; CodePen",
+    "Designer",
+    "Developer",
+    "Web Designer",
+    "Web Developer",
+    "Login Form in HTML & CSS",
+    "How to learn HTML & CSS",
+    "How to learn JavaScript",
+    "How to became Freelancer",
+    "How to became Web Designer",
+    "How to start Gaming Channel",
+    "How to start YouTube Channel",
+    "What does HTML stands for?",
+    "What does CSS stands for?",
+    "Python",
+    "Udemy",
+    // Symbols Codes
+    "&--SymbolCode--;",
+    "&copy;",
+    "&reg;",
+    "&euro;",
+    "&trade;",
+    "&larr;",
+    "&uarr;",
+    "&rarr;",
+    "&darr;",
+    "&spades;",
+    "&clubs;",
+    "&hearts;",
+    "&diams;",
+    "&Alpha;",
+    "&Beta;",
+    "&Gamma;",
+    "&Delta;",
+    "&Epsilon;",
+    "&Zeta;",
+    "&copysr;",
+    "&#8513;",
+    "&sect;",
+    "&alefsym;",
+    "&beth;",
+    "&gimel;",
+    "&daleth;",
+];
+
+// getting all required elements
+const searchWrapper = document.querySelector(".search-input");
+const inputBox = searchWrapper.querySelector("input");
+const suggBox = searchWrapper.querySelector(".autocom-box");
+const icon = searchWrapper.querySelector(".icon");
+let linkTag = searchWrapper.querySelector("a");
+let webLink;
+
+// if user press any key and release
+inputBox.onkeyup = (e)=>{
+    let userData = e.target.value; //user enetered data
+    let emptyArray = [];
+    if(userData){
+        icon.onclick = ()=>{
+            webLink = "https://www.google.com/search?q=" + userData;
+            linkTag.setAttribute("href", webLink);
+            console.log(webLink);
+            linkTag.click();
+        }
+        emptyArray = suggestions.filter((data)=>{
+            //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+            return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
+        });
+        emptyArray = emptyArray.map((data)=>{
+            // passing return data inside li tag
+            return data = '<li>'+ data +'</li>';
+        });
+        searchWrapper.classList.add("active"); //show autocomplete box
+        showSuggestions(emptyArray);
+        let allList = suggBox.querySelectorAll("li");
+        for (let i = 0; i < allList.length; i++) {
+            //adding onclick attribute in all li tag
+            allList[i].setAttribute("onclick", "select(this)");
+        }
+    }else{
+        searchWrapper.classList.remove("active"); //hide autocomplete box
+    }
+}
+
+function select(element,event){
+    let selectData = element.textContent;
+    inputBox.value = selectData;
+    icon.onclick = ()=>{
+        webLink = "https://www.google.com/search?q=" + selectData;
+        linkTag.setAttribute("href", webLink);
+        linkTag.click();
+    }
+    searchWrapper.classList.remove("active");
+}
+
+function showSuggestions(list){
+    let listData;
+    if(!list.length){
+        userValue = inputBox.value;
+        listData = '<li>'+ userValue +'</li>';
+    }else{
+        listData = list.join('');
+    }
+    suggBox.innerHTML = listData;
+}
+    </script>
+
+</body>
+</html>

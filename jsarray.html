@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Accueil</title>
+    <meta name="theme-color" content="#112A46">
+    <link rel="stylesheet" href="css/pageAccueil.css">
+</head>
+<body>
+
+	<style>
+
+.lignes {
+    height: 5vh;
+    margin-top: 1vh;
+}
+
+.ligne{
+    height: 3px;
+    border-radius: 5px;
+}
+
+.l1 {
+    width: 70vw;
+    background-color: #333;
+}
+.l2 {
+    position: relative;
+    top: 20px;
+    width: 40vw;
+    background-color: #FFBAC3;
+}
+
+.container-first, .presentation{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(241, 241, 241, 0.45);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    text-indent: 10px;
+}
+
+.container-first {
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+#titre{
+    margin-bottom: .5em;
+    font-size: 2.5rem;
+    text-align: center;
+
+}
+
+h1 span {
+    position: relative;  
+    /* pour pouvoir faire l'animation avec gsap*/
+}
+.recherche{
+    position: relative;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.presentation{
+    position: relative;
+    justify-content: center;
+    max-width: 60ch;
+    margin: 4vh auto;
+    font-size: 1.2rem;
+}
+
+.plus{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 40vh;
+    margin: 0 .5rem 3rem .5rem ;
+    
+}
+
+.media {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-grow: 1;
+    flex-direction: column;
+    list-style: none;
+}
+
+.bulle {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+.bulle:hover:nth-child(1){
+    background-color: #00e3ae;
+}
+.bulle:hover:nth-child(2){
+    background-color: #fdfd96;
+}
+.bulle:hover:nth-child(3){
+    background-color: #ff6961;
+}
+
+.logo-medias {
+    height: 40px;
+    width: 40px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 220px;
+}
+
+.decouvrir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 240px;
+    height: 140px;
+    background-color: #f1f1f1;
+    box-shadow: 
+    inset -0.6em -0.6em 1em #bfd1ff,
+    inset 0.4em 0.2em 0.3em #eff3ff,
+    0.3em 0.3em .7em #839ad7;
+    border-radius: 4rem;
+
+}
+
+
+.decouvrir h2 {
+    color: #132040;
+    text-align: center;
+    padding: 15px 15px 5px 15px;
+}
+
+.decouvrir a {
+    margin: 1em;
+    padding: 0.8em 1.5em;
+    background-color: #7ca2ff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 
+    0 0.5em 1em rgba(47, 107, 255, 0.6),
+    inset 0.1em 0.1em 0.4em #4379ff,
+    inset -0.2em -0.2em 0.8em #004aff;
+    cursor: pointer;
+    
+}
+
+.decouvrir a:hover{
+    background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);    
+    box-shadow: none ;
+    transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 767px){
+
+    .container-first, .presentation{
+        margin-left: .2em;
+        margin-right: .2em;
+    }
+};
+    
+
+	</style>
+
+
+    <div class="lignes">
+        <div class="ligne l1" ></div>
+        <div class="ligne l2"></div>
+    </div>
+
+
+    <div class="presentation">
+        <p class="competences">
+      <!-- texte typewriter-effect  -->
+        </p>
+    </div>
+	
+
+    
+  <script>
+	const titreSpans = document.querySelectorAll('h1 span');
+const recherche = document.querySelector('.recherche');
+const button = document.querySelector('.button');
+const media = document.querySelectorAll('.bulle');
+const l1 = document.querySelector('.l1');
+const l2 = document.querySelector('.l2');
+const competences = document.querySelector('.competences')
+
+
+window.addEventListener('load', () => {
+
+    const TL = gsap.timeline({paused: true});
+
+    TL
+    .staggerFrom(titreSpans, 1, {top: -50, opacity:0, ease: "power2.out"}, 0.3)
+    .from(recherche, 1, {left: -200, opacity:0, ease:"power2.out"}, 1.3)
+    .from(button, 1, { opacity:0, ease: "power0"},'-=1')
+    .from(l1, 1, { width: 0, ease: "power2.out"}, '-=2')
+    .from(l2, 1, { width: 0, ease: "power2.out"}, '-=2')
+    .staggerFrom(media, 0.7, {right:-200, ease: "power2.out"}, 0.3, '-=2');
+
+    TL.play();   
+    
+});
+
+window.addEventListener('load', () => {
+
+    new Typewriter(competences, {
+        deleteSpeed:8,
+        delay: 20,
+    })
+    .pauseFor(2000)
+    .typeString("Actuellement à la recherche d'une alternance pour un Bac+3 , J'ai appris comme language ")
+    .pauseFor(200)
+    .typeString('<strong style="color: #F16529">le HTML </strong> ')
+    .pauseFor(100)
+    .typeString('et le <strong style="color: #2965F1">CSS</strong> !')
+    .pauseFor(1000)
+    .deleteChars(21)
+    .typeString(' le <strong style="color: #ff6910">JavaScript</strong> ')
+    .pauseFor(100)
+    .typeString('ainsi que le <strong style="color: #9300ff ">PHP</strong> !')
+    .pauseFor(200)
+    .typeString(' J\'ai également travaillé sur les framework <strong style="color: #3FB27F ">VueJS</strong> et <strong style="color: #2c40d8 ">Symfony</strong> !')
+
+    .start()
+
+
+});
+
+
+
+
+
+    
+  </script>
+
+
+    
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="js/pageAccueil.js"></script>
+</body>
+</html>

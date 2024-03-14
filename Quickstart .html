@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        /* Imported font: Inter */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+/* List of variables */
+
+:root {
+/* Colors: */
+  --bg: #16181d;
+  --accent: #5686f5;
+  --accent-10: #5686f510;
+  --emphasis: #e8e8fd;
+  --text: #98a0b3;
+/* Typography */
+  --h1: 2.25rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --paragraph: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
+  --info-text: 1rem;
+  --text-width-wide: 70ch;
+  --text-width-medium: 60ch;
+  --fw-bold: 700; 
+  --fw-regular: 500;
+  --fw-light: 300;
+/* Spacing */
+  --spacing-xxs: 0.5em;
+  --spacing-xs: 1em;
+  --spacing-s: 1.5em;
+  --spacing-m: 3em;
+  --spacing-l: 6em;
+  --spacing-xl: 8em;
+/* Misc */
+  --radius-xs: 0.25em;
+  --radius-s: 0.5em;
+  --center-it: auto;
+}
+
+#scroll-tracker {
+  height: 4px;
+  background-color: var(--accent);
+  position: fixed;
+  inset: 0 0 auto;
+  transform-origin: left;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/*main {
+  margin-top: var(--spacing-xl);
+  padding-block: var(--spacing-m); 
+}*/
+
+article {
+  margin: var(--center-it);
+  max-width: 1000px;
+}
+
+/*article > p ~ p {
+  margin-bottom: var(--spacing-s);
+}*/
+
+h1 {
+  color: var(--emphasis);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h1);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  color: #000;
+  margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-m);
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  color: var(--accent);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h3);
+  font-weight: var(--fw-bold);
+}
+
+p {
+  font-size: 22px;
+  color: var(--text);
+  line-height: 32px;
+  letter-spacing: 0.25px;
+}
+
+em {
+  color: var(--emphasis);
+}
+
+cite {
+  font-weight: var(--fw-light);
+  color: var(--emphasis);
+  font-style: italic;
+}
+
+.info_block {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.info {
+  font-size: var(--info-text);
+  color: var(--text);
+}
+
+.likes, .replies, .mentions {
+  font-size: var(--info-text);
+  color: var(--accent);
+}
+
+.last_update {
+  display: inline-block;
+  background-color: var(--accent-10);
+  color: var(--accent);
+  margin-bottom: var(--spacing-l);
+  font-size: var(--info-text);
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  border-radius: var(--radius-s);
+}
+
+.link {
+  color: var(--accent);
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  margin-block: var(--spacing-m);
+  border-radius: var(--radius-xs);
+}
+
+.highlight {
+  margin: var(--center-it);
+  margin-bottom: var(--spacing-m);
+  background-color: var(--accent-10);
+  max-width: var(--text-width-medium);
+  border-radius: var(--radius-s);
+  padding: var(--spacing-m);
+}
+
+ul {
+  margin: var(--spacing-s);
+}
+
+li {
+  padding-bottom: var(--spacing-s);
+  margin-left: var(--spacing-xs);
+  font-size: var(--paragraph);
+  color: var(--emphasis);
+  list-style: square;
+}
+
+
+@media screen and (max-width: 760px) {
+  body {
+    padding-inline: var(--spacing-s);
+  }
+  
+  .info_block {
+    flex-direction: column;
+  }
+  
+  .highlight {
+    padding: var(--spacing-s);
+    max-width: var(--text-width-wide);
+  }
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+    </style>
+
+        <div id="scroll-tracker"></div>
+        
+        <main>
+
+            <!-- Header Section -->
+<header class="header" id="header">
+    <nav class="navbar container">
+       <a href="#" class="brand">Brand</a>
+       <div class="burger" id="burger">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+       </div>
+       <div class="menu" id="menu">
+          <ul class="menu-inner">
+             <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+             <li class="menu-item"><a href="#" class="menu-link">Feature</a></li>
+             <li class="menu-item"><a href="#" class="menu-link">Product</a></li>
+             <li class="menu-item"><a href="#" class="menu-link">Support</a></li>
+          </ul>
+       </div>
+       <a href="#" class="menu-block">Discover</a>
+    </nav>
+ </header>
+
+            <div style="background-image: url(http://deothemes.com/envato/canna/html/img/page_title/portfolio_title_bg.jpg);">
+                <div >
+                  <p>Flexbox Banner</p>
+                  <p>Perfectly Centered</p>
+                </div>
+              </div>
+          
+          <article>
+            <h2 style="font-weight: 200; font-size: 28px;" >Overview</h2>
+            <p style="font-weight: 100;">What is node?</p>
+            <p style="font-weight: 100;">What should I use node for?</p>
+            <p style="font-weight: 100;">What is Pro Search?</p>
+            <p style="font-weight: 100;">Do you have any examples for my use case?</p>
+
+          </article>
+          
+          <article>
+            <h2>What is Node?</h2>
+            <p>Perplexity is your AI-powered Swiss Army Knife for information discovery and curiosity. It's not just about answering questions; it's about empowering you to do more—whether you're looking to summarize content, explore new topics, or even get a little creative.</p> 
+          </article>
+          
+          <article>
+            <h2>Can you show me some examples?</h2>
+            <div>
+                <div style="display: inline-block;
+                background-color: var(--accent-10);
+                color: var(--accent);
+                margin-bottom: 12px;
+                font-size: 24px;
+                padding: 40px 80px 40px 80px;
+                border-radius: var(--radius-s);" class="pagination" >
+                    <a href="#">🍳 Need a quick recipe?</a>
+                    <a href="#">Create, brainstorm, research recipes <br> you know and love or come up with <br> something new.</a>
+                    <a href="#">&#8594</a>
+                  </div>              
+            </div>
+
+            <div>
+                <div style="display: inline-block;
+                background-color: var(--accent-10);
+                color: var(--accent);
+                margin-bottom: 12px;
+                font-size: 24px;
+                padding: 40px 80px 40px 80px;
+                border-radius: var(--radius-s);" class="pagination" >
+                    <a href="#">🍳 Need a quick recipe?</a>
+                    <a href="#">Create, brainstorm, research recipes <br> you know and love or come up with <br> something new.</a>
+                    <a href="#">&#8594</a>
+                  </div>              
+            </div>
+
+            <div>
+                <div style="display: inline-block;
+                background-color: var(--accent-10);
+                color: var(--accent);
+                margin-bottom: 12px;
+                font-size: 24px;
+                padding: 40px 80px 40px 80px;
+                border-radius: var(--radius-s);" class="pagination" >
+                    <a href="#">🍳 Need a quick recipe?</a>
+                    <a href="#">Create, brainstorm, research recipes <br> you know and love or come up with <br> something new.</a>
+                    <a href="#">&#8594</a>
+                  </div>              
+            </div>
+          </article>
+
+          
+          <article>
+            <h2>Famous Movies</h2>
+            <p>Tarkovsky is mainly known as a film director. During his career he directed seven feature films, as well as three shorts from his time at VGIK. His features are:</p>
+            <ul>
+              <li>Ivan's Childhood (1962)</li>
+              <li>Andrei Rublev (1966)</li>
+              <li>Solaris (1972)</li>
+              <li>Mirror (1975)</li>
+              <li>Stalker (1979)</li>
+              <li>Nostalghia (1983)</li>
+              <li>The Sacrifice (1986)</li>
+            </ul>
+          
+            <p>He also wrote several screenplays. Furthermore, he directed the play Hamlet for the stage in Moscow, directed the opera Boris Godunov in London, and he directed a radio production of the short story Turnabout by William Faulkner. He also wrote Sculpting in Time, a book on film theory.</p>
+            <p>Tarkovsky's <em>first feature film</em> was Ivan's Childhood in 1962. He then directed Andrei Rublev in 1966, Solaris in 1972, Mirror in 1975 and Stalker in 1979. The documentary <em>Voyage in Time</em> was produced in Italy in 1982, as was Nostalghia in 1983. His last film The Sacrifice was produced in Sweden in 1986. Tarkovsky was personally involved in writing the screenplays for all his films, sometimes with a cowriter. Tarkovsky once said: <cite>"A director who realizes somebody else's screenplay without being involved in it becomes a mere illustrator, resulting in dead and monotonous films.""</cite></p> 
+            <img src="https://faroutmagazine.co.uk/static/uploads/2021/06/5-shots-that-prove-Andrei-Tarkovsky-was-a-genius.jpg" alt="">
+          </article>
+           
+        </main>  
+  
+      
+    
+      
+</body>
+<script>
+    //Inspiration: https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/
+//Wiki: https://en.wikipedia.org/wiki/Andrei_Tarkovsky
+
+//A polyfill for ScrollTimeline:
+import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+
+//ScrollTracker Animation:
+var scrollTracker = document.getElementById('scroll-tracker');
+
+var scrollTrackingTimeline = new ScrollTimeline({
+  source: document.scrollingElement,
+  orientation: 'block',
+  scrollOffsets: [CSS.percent(0), CSS.percent(100)],
+});
+
+scrollTracker.animate(
+  {
+    transform: ['scaleX(0)', 'scaleX(1)']
+  },
+  {
+    timeline: scrollTrackingTimeline,
+  }
+)
+
+
+</script>
+<script type="module"></script>
+</html>
